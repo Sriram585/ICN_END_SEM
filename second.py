@@ -62,7 +62,7 @@ for line in process.stdout:
         # Probability-based detection (IMPORTANT)
         attack_prob = model.predict_proba(X)[0][1]
 
-        if attack_prob > 0.8:
+        if attack_prob > 0.5:
             label = "Attack"
             color = "red"
         else:
