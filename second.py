@@ -3,6 +3,8 @@ import joblib
 import streamlit as st
 import pandas as pd
 import time
+import platform
+import shutil
 
 # ============================
 # LOAD TRAINED MODEL
@@ -20,8 +22,13 @@ rows = []
 # TSHARK COMMAND
 # Interface 5 = Wi-Fi (from tshark -D)
 # ============================
-tshark_path = r"C:\Program Files\Wireshark\tshark.exe"
-
+# Detect OS
+if platform.system() == "Windows":
+    # Your local Windows path
+    tshark_path = r"C:\Program Files\Wireshark\tshark.exe"
+else:
+    # Linux (Streamlit Cloud) - assumes tshark is in the system path
+    tshark_path = shutil.which("tshark") or "tshark"
 tshark_cmd = [
     tshark_path,   # <--- This must be the variable, not the string "tshark"
     "-i", "5", 
