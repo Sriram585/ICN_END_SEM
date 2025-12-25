@@ -3,4 +3,3 @@ matplotlib
 scikit-learn
 joblib
 streamlit
-shutil
