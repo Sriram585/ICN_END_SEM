@@ -3,5 +3,4 @@ matplotlib
 scikit-learn
 joblib
 streamlit
-platform
 shutil
