@@ -115,7 +115,7 @@ if uploaded_file is not None and model is not None:
                 # Get probability of attack (class 1)
                 attack_prob = model.predict_proba(X)[0][1]
 
-                if attack_prob > 0.5:
+                if attack_prob > 0.7:
                     label = "Attack"
                     color = "red"
                     icon = "⚠️"
